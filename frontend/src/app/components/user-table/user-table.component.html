@@ -1,0 +1,50 @@
+<div class="table-container">
+  <div class="filter-container">
+    <label for="positionFilter">Filter by Company Position: </label>
+    <select id="positionFilter" [(ngModel)]="selectedCompanyPosition" (change)="filterUsers()">
+      <option value="">All Positions</option>
+      <option *ngFor="let position of uniquePositions" [value]="position">
+        {{ position }}
+      </option>
+    </select>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Company ID</th>
+        <th>Company Position</th>
+        <th>Join Date</th>
+        <th>Read</th>
+        <th>Edit</th>
+        <th>Deploy</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filteredUsers | paginate: { itemsPerPage: 6, currentPage: p }">
+        <td>{{ user.first_name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>{{ user.company_id }}</td>
+        <td>{{ user.position }}</td>
+        <td>{{ user.join_date | date:'MMM d, y' }}</td>
+        <td>
+          <input type="checkbox" [(ngModel)]="user.read_permission" (change)="updateUser(user)">
+        </td>
+        <td>
+          <input type="checkbox" [(ngModel)]="user.edit_permission" (change)="updateUser(user)">
+        </td>
+        <td>
+          <input type="checkbox" [(ngModel)]="user.deploy_permission" (change)="updateUser(user)">
+        </td>
+        <td>
+          <button class="delete-btn" (click)="deleteUser(user._id)">Delete X</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

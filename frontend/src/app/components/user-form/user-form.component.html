@@ -1,0 +1,55 @@
+<div class="form-container">
+  <h2>Adding New User</h2>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <form (ngSubmit)="addUser()">
+    <div class="form-grid">
+      <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" [(ngModel)]="user.first_name" name="first_name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" [(ngModel)]="user.last_name" name="last_name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Company ID:</label>
+        <input type="number" [(ngModel)]="user.company_id" name="company_id" required>
+      </div>
+
+      <div class="form-group">
+        <label>Company Position:</label>
+        <select [(ngModel)]="user.position" name="position" required>
+          <option value="Consultant">Consultant</option>
+          <option value="Team manager">Team Manager</option>
+          <option value="Product owner">Product Owner</option>
+          <option value="Business analyst">Business Analyst</option>
+          <option value="Student">Student</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Join Date:</label>
+        <input type="date" [(ngModel)]="user.join_date" name="join_date" required>
+      </div>
+
+      <div class="form-group">
+        <label>Permissions:</label>
+        <div class="permissions">
+          <label><input type="checkbox" [(ngModel)]="user.read_permission" name="read_permission"> Read</label>
+          <label><input type="checkbox" [(ngModel)]="user.edit_permission" name="edit_permission"> Edit</label>
+          <label><input type="checkbox" [(ngModel)]="user.deploy_permission" name="deploy_permission"> Deploy</label>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <button type="submit" class="submit-button">Submit</button>
+  </form>
+</div>
