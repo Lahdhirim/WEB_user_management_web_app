@@ -1,6 +1,7 @@
 # User Management Web Application (MEAN Stack)
 
 This project is a user management application, built using **Angular** for the frontend, **FastAPI** or **Node.js** for the backend, and **MongoDB** for data storage. The application allows users to perform CRUD (Create, Read, Update, Delete) operations.
+![Demo](assets/demo.gif)
 
 ## Features
 - Add a new user
@@ -9,7 +10,7 @@ This project is a user management application, built using **Angular** for the f
 - Delete a user
 
 <div style="text-align: center;">
-    <img src="imgs/architecture.jpg" alt="CV" width="650" height="350"/>
+    <img src="assets/architecture.jpg" alt="CV" width="650" height="350"/>
 </div>
 
 ---
