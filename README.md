@@ -27,8 +27,8 @@ Make sure you have the following requirements:
 ### Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Lahdhirim/user_management_web_app.git
-    cd user_management_web_app
+    git clone https://github.com/Lahdhirim/WEB_user_management_web_app.git
+    cd WEB_user_management_web_app
     ```
 2. Install the requirements:
     - For **FastAPI**:
